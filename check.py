@@ -9,6 +9,10 @@ d = json.load(open("cards.json", encoding="utf-8"))
 for k in ("updated", "rule", "receipts"):
     if k not in d: errs.append(f"少了最上層欄位 {k}")
 
+for i, f in enumerate(d.get("funds", [])):
+    if not isinstance(f.get("amount"), (int, float)): errs.append(f"funds 第 {i + 1} 筆：amount 要是數字")
+    if f.get("cur") not in ("TWD", "USD"): errs.append(f"funds 第 {i + 1} 筆：cur 要是 TWD 或 USD")
+
 ids = set()
 for r in d.get("receipts", []):
     rid = r.get("id", "?")

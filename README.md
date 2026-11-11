@@ -1,6 +1,8 @@
 # 卡牌收藏帳本
 
-弟弟在美國代買的卡盒收據資料。網站畫面在「家的旅程」的「收藏」分頁，會直接讀這裡的 `cards.json`。
+在美國代買的卡盒收據帳本，是一個 GitHub Pages 網站（`index.html`），資料在 `cards.json`。
+
+開網站：Settings → Pages → Source 選「Deploy from a branch」、Branch 選 `main`、資料夾 `/ (root)`，存檔後幾分鐘就有網址。
 
 ## 怎麼更新
 

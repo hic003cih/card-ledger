@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-11",
+  "updated": "2026-11-24",
   "buyer": "弟弟",
   "currency": "USD",
   "rule": {
@@ -16,6 +16,43 @@
     }
   ],
   "receipts": [
+    {
+      "id": "az-1124",
+      "date": "2026-11-24",
+      "store": "Amazon.com",
+      "items": [
+        {
+          "name": "30th Celebration Booster Bundle",
+          "cat": "pokemon",
+          "kind": "bundle",
+          "qty": 3,
+          "paid": 95.97,
+          "tax": 0,
+          "msrp": 80.82,
+          "market": 190.8,
+          "market_src": "TCGplayer 市價每盒 $63.60 ×3（Bill's Archive，11/18）",
+          "note": "每盒 $31.99 ×3；只有商品頁截圖，稅和運費還沒看到（先記 0，之後補）；日期用 11/24 傳截圖那天（推論）；原價每盒 $26.94"
+        }
+      ]
+    },
+    {
+      "id": "az-1123",
+      "date": "2026-11-23",
+      "store": "Amazon.com",
+      "items": [
+        {
+          "name": "Mega Evolution Delta Reign Elite Trainer Box",
+          "cat": "pokemon",
+          "kind": "etb",
+          "paid": 59.99,
+          "tax": 0,
+          "msrp": 49.99,
+          "market": 104.99,
+          "market_src": "用最低值：Misprint 售價 $104.99（日期未標）；Out of Games $133.04",
+          "note": "Amazon 自營；訂單頁品名被截斷，依盒子圖判斷是 Delta Reign ETB；截圖沒拍到稅和總額（先記 0，之後補）；預計 12/6–12/12 到貨"
+        }
+      ]
+    },
     {
       "id": "bn-4551",
       "date": null,

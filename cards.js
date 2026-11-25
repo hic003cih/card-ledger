@@ -134,7 +134,16 @@ function renderOver(c, all){
       <div class="cg-bbar"><i style="width:${pct}%"></i></div>
       <div class="cg-bl"><span>已花 ${money(total)}（${Math.round(total / budget * 100)}%）</span><span>匯了 ${funds.map(f => String(f.cur).toUpperCase() === "USD" ? usd(ct(f.amount)) : "NT$" + num(+f.amount).toLocaleString("en-US")).join("＋")}</span></div>
     </div>` : "";
-  $("cgOverBox").innerHTML = `
+  // 今天買的（美東日期）；今天沒有就顯示最近一天
+  const today = new Intl.DateTimeFormat("en-CA", { timeZone: "America/New_York" }).format(new Date());
+  const dated = all.filter(x => x.r.date && x.r.date <= today), day = dated.reduce((m, x) => x.r.date > m ? x.r.date : m, "");
+  const dayIt = dated.filter(x => x.r.date === day), dayC = sum(dayIt);
+  const dayHTML = day ? `
+    <div class="cg-day">
+      <div class="cg-bt"><span>${day === today ? "今天買的" : "最近一次買的"}（${esc(day.slice(5).replace("-", "/"))}）</span><b>${money(dayC)}</b><small>${alt(dayC)}</small></div>
+      <div class="cg-bl"><span>${dayIt.filter(x => x.cat !== "misc").reduce((s, x) => s + (num(x.qty) || 1), 0)} 件</span><span>${dayIt.some(x => x.cat !== "misc" && !num(x.tax)) ? "部分品項的稅還沒補" : "含稅"}</span></div>
+    </div>` : "";
+  $("cgOverBox").innerHTML = `${dayHTML}
     <div class="cg-fx">
       <div class="cg-cur">${["TWD", "USD"].map(k => `<button data-cur="${k}" class="${CUR === k ? "on" : ""}">${k === "TWD" ? "NT$ 台幣" : "US$ 美元"}</button>`).join("")}</div>
       <span>1 USD ≈ ${FX.r.toFixed(2)} TWD<small>${FX.live ? "" : "備用・"}${esc(FX.d)}</small></span>

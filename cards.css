@@ -98,6 +98,7 @@ body.mode-tcg #traveler{display:none}
 .cg-ra small{white-space:nowrap}
 @media(max-width:420px){.cg-rt{font-size:14.5px}.cg-ri{padding-left:0}.cg-row{gap:8px;padding:8px}}
 .cg-rcpts{grid-template-columns:minmax(0,1fr)}.cg-r{min-width:0}
+.cg-day{background:var(--chang-soft);border-radius:22px;padding:14px 16px 12px;margin-bottom:12px}
 .cg-bud{background:var(--card2);border-radius:22px;padding:14px 16px 12px;margin-bottom:12px}
 .cg-bt{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
 .cg-bt span{font-size:12.5px;color:var(--mut);letter-spacing:.08em}
